@@ -4,7 +4,13 @@ import { UsersService } from "./users.service";
 
 @Controller('users')
 export class UsersController {
+
     constructor(private userService: UsersService) {}
+
+    @Post()
+    async create(@Body() body: any) {
+        return await this.userService.create(body);
+    }
 
     @Get()
     async getAll() {
@@ -16,18 +22,24 @@ export class UsersController {
         return await this.userService.getOneBy({ id });
     }
 
-    @Post()
-    async create(@Body() body: any) {
-        return await this.userService.create(body);
+    @Put(':id')
+    async update(@Param('id') id: string, @Body() body: any) {
+        return await this.userService.update(id, body);
     }
 
-    // @Put(':id')
-    // async update(@Param('id') id: string, @Body() body: any) {
-    //     return await this.userService.update(id, body);
-    // }
+    @Delete('/permanent_delete/:id')
+    async permanentDelete(@Param('id') id: string) {
+        return await this.userService.permanentDelete(id);
+    }
 
-    // @Delete(':id')
-    // async delete(@Param('id') id: string) {
-    //     return await this.userService.delete({ id });
-    // }
+
+    @Delete(':id')
+    async softDelete(@Param('id') id: string) {
+        return await this.userService.softDelete(id);
+    }
+
+    @Put('/recover/:id')
+    async recover(@Param('id') id: string) {
+        return await this.userService.recover(id);
+    }
 }
