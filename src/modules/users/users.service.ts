@@ -10,7 +10,7 @@ export class UsersService extends BaseService{
     constructor(
         public beanManagementService: BeanManagementService,
         //@InjectRepository(UserEntity) public userRepository: Repository<UserEntity>
-    ){super(
-        beanManagementService, beanManagementService.user
-    )}
+    ){
+        super(beanManagementService, beanManagementService.user)
+    }
 }
