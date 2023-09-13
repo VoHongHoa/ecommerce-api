@@ -1,7 +1,7 @@
 import { BaseEntity } from 'src/common/base.entity';
 import { Column, Entity, Generated, PrimaryColumn } from 'typeorm';
 
-@Entity('Categories')
+@Entity('category')
 export class CategoryEntity extends BaseEntity {
   @PrimaryColumn()
   @Generated('uuid')
