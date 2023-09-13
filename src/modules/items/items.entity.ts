@@ -26,12 +26,12 @@ export class ItemEntity extends BaseEntity {
   description: string;
 
   @Column({
-    type: 'array',
+    type: 'varchar',
   })
-  image: string[];
+  image: string;
 
   @Column({
-    type: 'money',
+    type: 'int',
   })
   price: number;
 }
