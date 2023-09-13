@@ -8,6 +8,7 @@ import { CategoriesModule } from './modules/categories/categories.module';
 import { CartHeadersModule } from './modules/cart-headers/cart-headers.module';
 import { CartDetailsModule } from './modules/cart-details/cart-details.module';
 import { WhiteListHeadersModule } from './modules/white-list-headers/white-list-headers.module';
+import { WhiteListDetailsModule } from './modules/white-list-details/white-list-details.module';
 
 
 @Module({
@@ -32,7 +33,8 @@ import { WhiteListHeadersModule } from './modules/white-list-headers/white-list-
     CategoriesModule,
     CartHeadersModule,
     CartDetailsModule,
-    WhiteListHeadersModule
+    WhiteListHeadersModule,
+    WhiteListDetailsModule
     
   ],
 })
