@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ProductsModule } from './modules/products/products.module';
 import { UsersModule } from './modules/users/users.module';
 import { ProfilesModule } from './modules/profiles/profiles.module';
+import { ItemsModule } from './modules/items/items.module';
+import { CategoriesModule } from './modules/categories/categories.module';
 
 
 @Module({
@@ -22,9 +23,10 @@ import { ProfilesModule } from './modules/profiles/profiles.module';
       autoLoadEntities: true,
       synchronize: true
     }),
-    ProductsModule,
     UsersModule,
-    ProfilesModule
+    ProfilesModule,
+    ItemsModule,
+    CategoriesModule
   ],
 })
 export class AppModule {}
