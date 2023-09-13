@@ -6,6 +6,7 @@ import { BeanManagementService } from "./bean-management.service";
 import { CategoryEntity } from "src/modules/categories/categories.entity";
 import { ItemEntity } from "src/modules/items/items.entity";
 import { CartHeaderEntity } from "src/modules/cart-headers/cart-headers.entity";
+import { CartDetailEntity } from "src/modules/cart-details/cart-details.entity";
 
 @Global()
 @Module({
@@ -15,7 +16,8 @@ import { CartHeaderEntity } from "src/modules/cart-headers/cart-headers.entity";
             ProfileEntity,
             CategoryEntity,
             ItemEntity,
-            CartHeaderEntity
+            CartHeaderEntity,
+            CartDetailEntity
         ])
     ],
     providers: [
