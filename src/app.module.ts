@@ -9,6 +9,7 @@ import { CartHeadersModule } from './modules/cart-headers/cart-headers.module';
 import { CartDetailsModule } from './modules/cart-details/cart-details.module';
 import { WhiteListHeadersModule } from './modules/white-list-headers/white-list-headers.module';
 import { WhiteListDetailsModule } from './modules/white-list-details/white-list-details.module';
+import { InvoiceHeadersModule } from './modules/invoice-headers/invoice-headers.module';
 
 
 @Module({
@@ -34,7 +35,8 @@ import { WhiteListDetailsModule } from './modules/white-list-details/white-list-
     CartHeadersModule,
     CartDetailsModule,
     WhiteListHeadersModule,
-    WhiteListDetailsModule
+    WhiteListDetailsModule,
+    InvoiceHeadersModule
     
   ],
 })
