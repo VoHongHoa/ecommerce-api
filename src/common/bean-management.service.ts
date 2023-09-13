@@ -3,6 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { CartDetailEntity } from "src/modules/cart-details/cart-details.entity";
 import { CartHeaderEntity } from "src/modules/cart-headers/cart-headers.entity";
 import { CategoryEntity } from "src/modules/categories/categories.entity";
+import { InvoiceDetailEntity } from "src/modules/invoice-details/invoice-details.entity";
 import { InvoiceHeaderEntity } from "src/modules/invoice-headers/invoice-headers.entity";
 import { ItemEntity } from "src/modules/items/items.entity";
 import { ProfileEntity } from "src/modules/profiles/profiles.entity";
@@ -23,6 +24,6 @@ export class BeanManagementService {
         @InjectRepository(WhiteListHeaderEntity) public readonly whiteListHeader: Repository<WhiteListHeaderEntity>,
         @InjectRepository(WhiteListDetailEntity) public readonly whiteListDetail: Repository<WhiteListDetailEntity>,
         @InjectRepository(InvoiceHeaderEntity) public readonly invoiceHeader: Repository<InvoiceHeaderEntity>,
-        
+        @InjectRepository(InvoiceDetailEntity) public readonly invoiceDetail: Repository<InvoiceDetailEntity>
     ) {}
 }
