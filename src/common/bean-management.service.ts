@@ -6,6 +6,7 @@ import { CategoryEntity } from "src/modules/categories/categories.entity";
 import { ItemEntity } from "src/modules/items/items.entity";
 import { ProfileEntity } from "src/modules/profiles/profiles.entity";
 import { UserEntity } from "src/modules/users/users.entity";
+import { WhiteListHeaderEntity } from "src/modules/white-list-headers/white-list-headers.entity";
 import { Repository } from "typeorm";
 
 @Injectable()
@@ -17,5 +18,7 @@ export class BeanManagementService {
         @InjectRepository(CategoryEntity) public readonly category: Repository<CategoryEntity>,
         @InjectRepository(CartHeaderEntity) public readonly cartHeader: Repository<CartHeaderEntity>,
         @InjectRepository(CartDetailEntity) public readonly cartDetail: Repository<CartDetailEntity>,
+        @InjectRepository(WhiteListHeaderEntity) public readonly whiteListHeader: Repository<WhiteListHeaderEntity>,
+        
     ) {}
 }

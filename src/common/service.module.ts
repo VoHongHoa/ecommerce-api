@@ -7,6 +7,7 @@ import { CategoryEntity } from "src/modules/categories/categories.entity";
 import { ItemEntity } from "src/modules/items/items.entity";
 import { CartHeaderEntity } from "src/modules/cart-headers/cart-headers.entity";
 import { CartDetailEntity } from "src/modules/cart-details/cart-details.entity";
+import { WhiteListHeaderEntity } from "src/modules/white-list-headers/white-list-headers.entity";
 
 @Global()
 @Module({
@@ -17,7 +18,8 @@ import { CartDetailEntity } from "src/modules/cart-details/cart-details.entity";
             CategoryEntity,
             ItemEntity,
             CartHeaderEntity,
-            CartDetailEntity
+            CartDetailEntity,
+            WhiteListHeaderEntity
         ])
     ],
     providers: [
