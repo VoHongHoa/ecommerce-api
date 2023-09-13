@@ -10,6 +10,7 @@ import { CartDetailsModule } from './modules/cart-details/cart-details.module';
 import { WhiteListHeadersModule } from './modules/white-list-headers/white-list-headers.module';
 import { WhiteListDetailsModule } from './modules/white-list-details/white-list-details.module';
 import { InvoiceHeadersModule } from './modules/invoice-headers/invoice-headers.module';
+import { InvoiceDetailsModule } from './modules/invoice-details/invoice-details.module';
 
 
 @Module({
@@ -36,8 +37,8 @@ import { InvoiceHeadersModule } from './modules/invoice-headers/invoice-headers.
     CartDetailsModule,
     WhiteListHeadersModule,
     WhiteListDetailsModule,
-    InvoiceHeadersModule
-    
+    InvoiceHeadersModule,
+    InvoiceDetailsModule
   ],
 })
 export class AppModule {}
