@@ -1,5 +1,6 @@
 import { Injectable }  from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { CartDetailEntity } from "src/modules/cart-details/cart-details.entity";
 import { CartHeaderEntity } from "src/modules/cart-headers/cart-headers.entity";
 import { CategoryEntity } from "src/modules/categories/categories.entity";
 import { ItemEntity } from "src/modules/items/items.entity";
@@ -15,6 +16,6 @@ export class BeanManagementService {
         @InjectRepository(ItemEntity) public readonly item: Repository<ItemEntity>,
         @InjectRepository(CategoryEntity) public readonly category: Repository<CategoryEntity>,
         @InjectRepository(CartHeaderEntity) public readonly cartHeader: Repository<CartHeaderEntity>,
-
+        @InjectRepository(CartDetailEntity) public readonly cartDetail: Repository<CartDetailEntity>,
     ) {}
 }

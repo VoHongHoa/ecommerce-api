@@ -6,6 +6,7 @@ import { ProfilesModule } from './modules/profiles/profiles.module';
 import { ItemsModule } from './modules/items/items.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { CartHeadersModule } from './modules/cart-headers/cart-headers.module';
+import { CartDetailsModule } from './modules/cart-details/cart-details.module';
 
 
 @Module({
@@ -28,7 +29,8 @@ import { CartHeadersModule } from './modules/cart-headers/cart-headers.module';
     ProfilesModule,
     ItemsModule,
     CategoriesModule,
-    CartHeadersModule
+    CartHeadersModule,
+    CartDetailsModule
   ],
 })
 export class AppModule {}
