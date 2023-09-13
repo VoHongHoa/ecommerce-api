@@ -2,7 +2,7 @@ import { BaseEntity } from "src/common/base.entity";
 import { Entity, Column, PrimaryColumn, Generated } from "typeorm";
 
 
-@Entity('User')
+@Entity('user')
 export class UserEntity extends BaseEntity{
     @PrimaryColumn()
     @Generated('uuid')
