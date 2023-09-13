@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { CategoriesService } from './categories.service';
 
-@Controller()
+@Controller("/categories")
 export class CategoriesController {
   constructor(private categoriesService: CategoriesService) {}
   @Post()

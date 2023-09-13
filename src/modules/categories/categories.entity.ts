@@ -26,7 +26,7 @@ export class CategoryEntity extends BaseEntity {
   description: string;
 
   @Column({
-    type: 'array',
+    type: 'varchar',
   })
-  image: string[];
+  image: string;
 }
