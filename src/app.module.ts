@@ -7,6 +7,7 @@ import { ItemsModule } from './modules/items/items.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { CartHeadersModule } from './modules/cart-headers/cart-headers.module';
 import { CartDetailsModule } from './modules/cart-details/cart-details.module';
+import { WhiteListHeadersModule } from './modules/white-list-headers/white-list-headers.module';
 
 
 @Module({
@@ -30,7 +31,9 @@ import { CartDetailsModule } from './modules/cart-details/cart-details.module';
     ItemsModule,
     CategoriesModule,
     CartHeadersModule,
-    CartDetailsModule
+    CartDetailsModule,
+    WhiteListHeadersModule
+    
   ],
 })
 export class AppModule {}
