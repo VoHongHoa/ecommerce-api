@@ -1,16 +1,16 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Entity, Column, PrimaryColumn, Generated } from "typeorm";
+import { Entity, Column } from "typeorm";
 
 
 @Entity('cart_detail')
 export class CartDetailEntity extends BaseEntity{
 
-    @PrimaryColumn({
+    @Column({
         type: 'varchar',
     })
     cart_id: string;
 
-    @PrimaryColumn({
+    @Column({
         type: 'varchar',
     })
     item_id: string;

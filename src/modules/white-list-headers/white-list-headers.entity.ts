@@ -4,9 +4,6 @@ import { Entity, Column, PrimaryColumn, Generated } from "typeorm";
 
 @Entity('white_list_header')
 export class WhiteListHeaderEntity extends BaseEntity{
-    @PrimaryColumn()
-    @Generated('uuid')
-    id: string;
 
     @Column({
         type: 'varchar',
