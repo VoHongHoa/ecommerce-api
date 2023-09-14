@@ -1,5 +1,6 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Entity, Column, PrimaryColumn, Generated } from "typeorm";
+import { Entity, Column, PrimaryColumn, Generated, OneToOne, JoinColumn } from "typeorm";
+import { ProfileEntity } from "../profiles/profiles.entity";
 
 
 @Entity('user')
@@ -39,4 +40,9 @@ export class UserEntity extends BaseEntity{
     })
     role: string;
 
+    @OneToOne(()=>ProfileEntity, (profile) => profile.user)
+    @JoinColumn({
+        name: 'profile'
+    })
+    profile: ProfileEntity;
 }

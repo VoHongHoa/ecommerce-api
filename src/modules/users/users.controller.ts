@@ -42,4 +42,9 @@ export class UsersController {
     async recover(@Param('id') id: string) {
         return await this.userService.recover(id);
     }
+
+    @Get(':id/profile')
+    async getProfile(@Param('id') id: string) {
+        return await this.userService.getProfile(id);
+    }
 }
