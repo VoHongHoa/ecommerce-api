@@ -3,7 +3,7 @@ import { Entity, Column, OneToOne, JoinColumn } from "typeorm";
 import { ProfileEntity } from "../profiles/profiles.entity";
 
 
-@Entity('User')
+@Entity('user')
 export class UserEntity extends BaseEntity{
 
     @Column({

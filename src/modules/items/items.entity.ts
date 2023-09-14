@@ -2,7 +2,7 @@ import { BaseEntity } from 'src/common/base.entity';
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { CategoryEntity } from '../categories/categories.entity';
 
-@Entity('Items')
+@Entity('item')
 export class ItemEntity extends BaseEntity {
 
   @Column({

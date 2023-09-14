@@ -23,7 +23,7 @@ export class CategoriesController {
   }
 
   @Get(':id')
-  async getById(@Param() id: string) {
+  async getById(@Param('id') id: string) {
     return await this.categoriesService.getOneBy({ id });
   }
 

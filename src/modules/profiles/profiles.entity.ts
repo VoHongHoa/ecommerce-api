@@ -2,7 +2,7 @@ import { BaseEntity } from "src/common/base.entity";
 import { Column, Entity, OneToOne } from "typeorm";
 import { UserEntity } from "../users/users.entity";
 
-@Entity('Profile')
+@Entity('profile')
 export class ProfileEntity extends BaseEntity {
 
     @Column({
