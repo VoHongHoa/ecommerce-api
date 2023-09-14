@@ -5,12 +5,12 @@ import { Entity, Column, PrimaryColumn, Generated } from "typeorm";
 @Entity('white_list_detail')
 export class WhiteListDetailEntity extends BaseEntity{
 
-    @PrimaryColumn({
+    @Column({
         type: 'varchar',
     })
     white_list_id: string;
 
-    @PrimaryColumn({
+    @Column({
         type: 'varchar',
     })
     item_id: string;

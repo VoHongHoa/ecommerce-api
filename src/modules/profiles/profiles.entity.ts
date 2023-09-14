@@ -1,13 +1,9 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Column, Entity, Generated, OneToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, OneToOne } from "typeorm";
 import { UserEntity } from "../users/users.entity";
 
 @Entity('profile')
 export class ProfileEntity extends BaseEntity {
-
-    @PrimaryColumn()
-    @Generated('uuid')
-    id: string;
 
     @Column({
         type: 'varchar',

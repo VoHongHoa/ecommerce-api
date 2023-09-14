@@ -1,16 +1,16 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column } from "typeorm";
 
 
 @Entity('invoice_detail')
 export class InvoiceDetailEntity extends BaseEntity{
 
-    @PrimaryColumn({
+    @Column({
         type: 'varchar',
     })
     invoice_id: string;
 
-    @PrimaryColumn({
+    @Column({
         type: 'varchar',
     })
     item_id: string;

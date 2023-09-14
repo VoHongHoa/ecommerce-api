@@ -1,12 +1,9 @@
 import { BaseEntity } from 'src/common/base.entity';
-import { Column, Entity, Generated, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { CategoryEntity } from '../categories/categories.entity';
 
 @Entity('item')
 export class ItemEntity extends BaseEntity {
-  @PrimaryColumn()
-  @Generated('uuid')
-  id: string;
 
   @Column({
     type: 'varchar',
