@@ -37,9 +37,15 @@ export class UserEntity extends BaseEntity{
     })
     role: string;
 
+    @Column({
+        type: 'varchar'
+    })
+    profile_id: string;
+
     @OneToOne(()=>ProfileEntity, (profile) => profile.user)
     @JoinColumn({
-        name: 'profile'
+        name: 'profile_id',
+        referencedColumnName: 'id'
     })
     profile: ProfileEntity;
 }

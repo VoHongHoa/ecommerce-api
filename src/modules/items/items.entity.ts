@@ -33,9 +33,15 @@ export class ItemEntity extends BaseEntity {
   })
   price: number;
 
+  @Column({
+    type: 'varchar'
+  })
+  category_id: string;
+
   @ManyToOne(()=>CategoryEntity, (category) => category.items)
   @JoinColumn({
-    name: 'category'
+    name: 'category_id',
+    referencedColumnName: 'id'
   })
   category: CategoryEntity;
   
