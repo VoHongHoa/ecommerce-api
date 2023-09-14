@@ -1,5 +1,6 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Column, Entity, Generated, PrimaryColumn } from "typeorm";
+import { Column, Entity, Generated, OneToOne, PrimaryColumn } from "typeorm";
+import { UserEntity } from "../users/users.entity";
 
 @Entity('Profile')
 export class ProfileEntity extends BaseEntity {
@@ -33,8 +34,6 @@ export class ProfileEntity extends BaseEntity {
     })
     phone: string;
 
-    @Column({
-        type: 'varchar'
-    })
-    user_id: string;
+    @OneToOne(()=>UserEntity, (user) => user.profile)
+    user: UserEntity;
 }
