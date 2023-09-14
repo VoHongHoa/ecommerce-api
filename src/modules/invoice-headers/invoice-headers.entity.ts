@@ -10,8 +10,27 @@ export class InvoiceHeaderEntity extends BaseEntity{
 
     @Column({
         type: 'varchar',
+        length: 50,
+        unique: true,
     })
-    user_id: string;
+    code: string;
+
+    @Column({
+        type: 'varchar',
+    })
+    customer_id: string;
+
+    @Column({
+        type: 'varchar',
+        length: 50
+    })
+    customer_name: string;
+
+    @Column({
+        type: 'varchar',
+        length: 15
+    })
+    customer_phone: string;
 
     @Column({
         type: 'int',

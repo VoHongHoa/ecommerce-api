@@ -15,11 +15,23 @@ export class ProfileEntity extends BaseEntity {
     name: string;
 
     @Column({
+        type: 'date'
+    })
+    date_of_birth: string; 
+
+    @Column({
         type: 'varchar',
         length: 50,
         unique: true,
     })
     email: string;
+
+    @Column({
+        type: 'varchar',
+        length: 15,
+        unique: true
+    })
+    phone: string;
 
     @Column({
         type: 'varchar'
