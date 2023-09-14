@@ -1,5 +1,7 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Entity, Column } from "typeorm";
+import { Entity, Column, ManyToOne, OneToMany, JoinColumn } from "typeorm";
+import { InvoiceDetailEntity } from "../invoice-details/invoice-details.entity";
+import { UserEntity } from "../users/users.entity";
 
 
 @Entity('invoice_header')
@@ -15,7 +17,7 @@ export class InvoiceHeaderEntity extends BaseEntity{
     @Column({
         type: 'varchar',
     })
-    customer_id: string;
+    user_id: string;
 
     @Column({
         type: 'varchar',
@@ -38,4 +40,15 @@ export class InvoiceHeaderEntity extends BaseEntity{
         type: 'int',
     })
     total_money: number;
+
+    @OneToMany(()=>UserEntity, (user) => user.invoices)
+    @JoinColumn({
+        name: 'user_id',
+        referencedColumnName: 'id'
+    })
+    user: UserEntity;
+
+    @ManyToOne(()=>InvoiceDetailEntity, (invoiceDetail)=> invoiceDetail.invoiceHeader)
+    invoiceDetails: InvoiceDetailEntity[];
+
 }
