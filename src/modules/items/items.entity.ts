@@ -1,6 +1,8 @@
 import { BaseEntity } from 'src/common/base.entity';
-import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from 'typeorm';
 import { CategoryEntity } from '../categories/categories.entity';
+import { CartDetailEntity } from '../cart-details/cart-details.entity';
+import { WhiteListDetailEntity } from '../white-list-details/white-list-details.entity';
 
 @Entity('item')
 export class ItemEntity extends BaseEntity {
@@ -44,5 +46,11 @@ export class ItemEntity extends BaseEntity {
     referencedColumnName: 'id'
   })
   category: CategoryEntity;
+
+  @OneToMany(()=> CartDetailEntity, (cartDetail) => cartDetail.item)
+  cartDetails: CartDetailEntity[];
+
+  @OneToMany(()=> WhiteListDetailEntity, (whiteListDetail) => whiteListDetail.item)
+  whiteListDetails: WhiteListDetailEntity[];
   
 }
