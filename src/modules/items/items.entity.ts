@@ -1,5 +1,6 @@
 import { BaseEntity } from 'src/common/base.entity';
-import { Column, Entity, Generated, PrimaryColumn } from 'typeorm';
+import { Column, Entity, Generated, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import { CategoryEntity } from '../categories/categories.entity';
 
 @Entity('Items')
 export class ItemEntity extends BaseEntity {
@@ -34,4 +35,11 @@ export class ItemEntity extends BaseEntity {
     type: 'int',
   })
   price: number;
+
+  @ManyToOne(()=>CategoryEntity, (category) => category.items)
+  @JoinColumn({
+    name: 'category'
+  })
+  category: CategoryEntity;
+  
 }

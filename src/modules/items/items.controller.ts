@@ -42,4 +42,8 @@ export class ItemsController {
         return await this.itemsService.recover(id);
     }
 
+    @Get(':id/category')
+    async getCategory(@Param('id') id: string) {
+        return await this.itemsService.getCategory(id);
+    }
 } 
