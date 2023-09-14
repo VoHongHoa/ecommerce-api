@@ -1,5 +1,6 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Entity, Column, PrimaryColumn, Generated } from "typeorm";
+import { Entity, Column, OneToMany } from "typeorm";
+import { CartDetailEntity } from "../cart-details/cart-details.entity";
 
 
 @Entity('cart_header')
@@ -19,4 +20,7 @@ export class CartHeaderEntity extends BaseEntity{
         type: 'int',
     })
     total_money: number;
+
+    @OneToMany(()=>CartDetailEntity, (cartDetail) => cartDetail.cartHeader)
+    cartDetails: CartDetailEntity[];
 }

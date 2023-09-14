@@ -1,5 +1,6 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Entity, Column } from "typeorm";
+import { Entity, Column, ManyToOne, JoinColumn } from "typeorm";
+import { CartHeaderEntity } from "../cart-headers/cart-headers.entity";
 
 
 @Entity('cart_detail')
@@ -19,4 +20,11 @@ export class CartDetailEntity extends BaseEntity{
         type: 'int',
     })
     quantity: number;
+
+    @ManyToOne(()=>CartHeaderEntity, (cartHeader) => cartHeader.cartDetails)
+    @JoinColumn({
+        name: 'cart_id',
+        referencedColumnName: 'id'
+    })
+    cartHeader: CartHeaderEntity;
 }
