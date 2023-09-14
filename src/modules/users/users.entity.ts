@@ -1,8 +1,9 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Entity, Column, OneToOne, JoinColumn } from "typeorm";
+import { Entity, Column, OneToOne, JoinColumn, OneToMany } from "typeorm";
 import { ProfileEntity } from "../profiles/profiles.entity";
 import { CartHeaderEntity } from "../cart-headers/cart-headers.entity";
 import { WhiteListHeaderEntity } from "../white-list-headers/white-list-headers.entity";
+import { InvoiceHeaderEntity } from "../invoice-headers/invoice-headers.entity";
 
 
 @Entity('user')
@@ -74,4 +75,7 @@ export class UserEntity extends BaseEntity{
         referencedColumnName: 'id'
     })
     whiteList: WhiteListHeaderEntity;
+
+    @OneToMany(()=>InvoiceHeaderEntity, (invoice) => invoice.user)
+    invoices: InvoiceHeaderEntity[];
 }

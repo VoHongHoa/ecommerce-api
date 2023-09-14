@@ -3,6 +3,7 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from 'typeorm';
 import { CategoryEntity } from '../categories/categories.entity';
 import { CartDetailEntity } from '../cart-details/cart-details.entity';
 import { WhiteListDetailEntity } from '../white-list-details/white-list-details.entity';
+import { InvoiceDetailEntity } from '../invoice-details/invoice-details.entity';
 
 @Entity('item')
 export class ItemEntity extends BaseEntity {
@@ -53,4 +54,6 @@ export class ItemEntity extends BaseEntity {
   @OneToMany(()=> WhiteListDetailEntity, (whiteListDetail) => whiteListDetail.item)
   whiteListDetails: WhiteListDetailEntity[];
   
+  @OneToMany(() => InvoiceDetailEntity, (invoiceDetail) => invoiceDetail.item)
+  invoiceDetails: InvoiceDetailEntity[];
 }
