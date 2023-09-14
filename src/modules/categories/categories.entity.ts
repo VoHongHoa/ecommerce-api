@@ -1,5 +1,6 @@
 import { BaseEntity } from 'src/common/base.entity';
-import { Column, Entity, Generated, PrimaryColumn } from 'typeorm';
+import { Column, Entity, Generated, OneToMany, PrimaryColumn } from 'typeorm';
+import { ItemEntity } from '../items/items.entity';
 
 @Entity('category')
 export class CategoryEntity extends BaseEntity {
@@ -29,4 +30,7 @@ export class CategoryEntity extends BaseEntity {
     type: 'varchar',
   })
   image: string;
+
+  @OneToMany(()=>ItemEntity, (item) => item.category)
+  items: ItemEntity[];
 }
