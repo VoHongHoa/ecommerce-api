@@ -1,6 +1,8 @@
 import { BaseEntity } from "src/common/base.entity";
 import { Entity, Column, OneToOne, JoinColumn } from "typeorm";
 import { ProfileEntity } from "../profiles/profiles.entity";
+import { CartHeaderEntity } from "../cart-headers/cart-headers.entity";
+import { WhiteListHeaderEntity } from "../white-list-headers/white-list-headers.entity";
 
 
 @Entity('user')
@@ -48,4 +50,28 @@ export class UserEntity extends BaseEntity{
         referencedColumnName: 'id'
     })
     profile: ProfileEntity;
+
+    @Column({
+        type: 'varchar'
+    })
+    cart_id: string;
+
+    @OneToOne(() => CartHeaderEntity, (cart) => cart.user)
+    @JoinColumn({
+        name: 'cart_id',
+        referencedColumnName: 'id'
+    })
+    cart: CartHeaderEntity;
+
+    @Column({
+        type: 'varchar'
+    })
+    white_list_id: string;
+
+    @OneToOne(()=>WhiteListHeaderEntity, (whiteList) => whiteList.user)
+    @JoinColumn({
+        name: 'white_list_id',
+        referencedColumnName: 'id'
+    })
+    whiteList: WhiteListHeaderEntity;
 }
