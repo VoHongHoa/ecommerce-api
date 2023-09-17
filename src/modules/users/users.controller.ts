@@ -1,5 +1,6 @@
-import { Controller, Get, Post, Put, Delete, Param, Body,  } from "@nestjs/common";
+import { Controller, Get, Post, Put, Delete, Param, Body, UseGuards,  } from "@nestjs/common";
 import { UsersService } from "./users.service";
+import { AuthGuard } from "../auth/auth.guard";
 
 
 @Controller('users')
@@ -12,6 +13,7 @@ export class UsersController {
         return await this.userService.create(body);
     }
 
+    @UseGuards(AuthGuard)
     @Get()
     async getAll() {
         return await this.userService.getAll();

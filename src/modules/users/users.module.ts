@@ -9,5 +9,6 @@ import { ServiceModule } from "src/common/service.module";
     ],
     providers: [UsersService],
     controllers: [UsersController],
+    exports: [UsersService],
 })
 export class UsersModule {}

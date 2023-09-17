@@ -11,6 +11,7 @@ import { WhiteListHeadersModule } from './modules/white-list-headers/white-list-
 import { WhiteListDetailsModule } from './modules/white-list-details/white-list-details.module';
 import { InvoiceHeadersModule } from './modules/invoice-headers/invoice-headers.module';
 import { InvoiceDetailsModule } from './modules/invoice-details/invoice-details.module';
+import { AuthModule } from './modules/auth/auth.module.';
 
 
 @Module({
@@ -38,7 +39,8 @@ import { InvoiceDetailsModule } from './modules/invoice-details/invoice-details.
     WhiteListHeadersModule,
     WhiteListDetailsModule,
     InvoiceHeadersModule,
-    InvoiceDetailsModule
+    InvoiceDetailsModule,
+    AuthModule
   ],
 })
 export class AppModule {}

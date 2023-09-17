@@ -3,7 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { BaseService } from "src/common/base.service";
 import { BeanManagementService } from "src/common/bean-management.service";
 // import { UserEntity } from "./users.entity";
-import { Repository } from "typeorm";
+// import { Repository } from "typeorm";
 
 @Injectable()
 export class UsersService extends BaseService{

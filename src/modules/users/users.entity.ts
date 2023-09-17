@@ -41,7 +41,8 @@ export class UserEntity extends BaseEntity{
     role: string;
 
     @Column({
-        type: 'varchar'
+        type: 'varchar',
+        nullable: true
     })
     profile_id: string;
 
@@ -53,7 +54,8 @@ export class UserEntity extends BaseEntity{
     profile: ProfileEntity;
 
     @Column({
-        type: 'varchar'
+        type: 'varchar',
+        nullable: true
     })
     cart_id: string;
 
@@ -65,7 +67,8 @@ export class UserEntity extends BaseEntity{
     cart: CartHeaderEntity;
 
     @Column({
-        type: 'varchar'
+        type: 'varchar',
+        nullable: true
     })
     white_list_id: string;
 
