@@ -15,6 +15,7 @@ import { AuthModule } from './modules/auth/auth.module.';
 import { RolesModule } from './modules/roles/roles.module';
 import { RoleACLProfilesModule } from './modules/role-acl-profiles/role-acl-profiles.module';
 import { ACLModule } from './modules/acl/acl.module';
+import { UiACLModule } from './modules/ui-acl/ui-acl.module';
 
 
 @Module({
@@ -46,6 +47,7 @@ import { ACLModule } from './modules/acl/acl.module';
     RolesModule,
     RoleACLProfilesModule,
     ACLModule,
+    UiACLModule,
     AuthModule
   ],
 })
