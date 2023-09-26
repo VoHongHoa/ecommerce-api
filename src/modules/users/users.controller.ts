@@ -1,6 +1,8 @@
 import { Controller, Get, Post, Put, Delete, Param, Body, UseGuards,  } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import { AuthGuard } from "../auth/auth.guard";
+import { Role } from "src/enums/role.enum";
+import RoleGuard from "../authz/authorize.guard";
 
 
 @Controller('users')
@@ -13,8 +15,9 @@ export class UsersController {
         return await this.userService.create(body);
     }
 
-    @UseGuards(AuthGuard)
     @Get()
+    @UseGuards(RoleGuard(Role.Admin))
+    @UseGuards(AuthGuard)
     async getAll() {
         return await this.userService.getAll();
     }

@@ -5,6 +5,7 @@ import { CartHeaderEntity } from "../cart-headers/cart-headers.entity";
 import { WhiteListHeaderEntity } from "../white-list-headers/white-list-headers.entity";
 import { InvoiceHeaderEntity } from "../invoice-headers/invoice-headers.entity";
 import { RoleEntity } from "../roles/roles.entity";
+import { Role } from "src/enums/role.enum";
 
 
 @Entity('user')
@@ -34,17 +35,24 @@ export class UserEntity extends BaseEntity{
     status: string;
 
     @Column({
-        type: 'varchar',
-        nullable: false
+        type: 'enum',
+        enum: Role,
+        default: Role.User
     })
-    role_id: string;
+    role: string;
 
-    @ManyToOne(()=>RoleEntity, (role) => role.users)
-    @JoinColumn({
-        name: 'role_id',
-        referencedColumnName: 'id'
-    })
-    role: RoleEntity;
+    // @Column({
+    //     type: 'varchar',
+    //     nullable: false
+    // })
+    // role_id: string;
+
+    // @ManyToOne(()=>RoleEntity, (role) => role.users)
+    // @JoinColumn({
+    //     name: 'role_id',
+    //     referencedColumnName: 'id'
+    // })
+    // role: RoleEntity;
 
     @Column({
         type: 'varchar',

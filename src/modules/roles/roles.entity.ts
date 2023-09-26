@@ -2,19 +2,19 @@ import { BaseEntity } from "src/common/base.entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
 import { UserEntity } from "../users/users.entity";
 import { RoleACLProfileEntity } from "../role-acl-profiles/role-acl-profiles.entity";
+import { Role } from "src/enums/role.enum";
 
 @Entity('role')
 export class RoleEntity extends BaseEntity {
     @Column({
-        type: 'varchar',
-        length: 20,
-        nullable: false,
-        default: 'customer'
+        type: 'enum',
+        enum: Role,
+        default: Role.User
     })
     role: string;
 
-    @OneToMany(()=>UserEntity, (user) => user.role)
-    users: UserEntity[];
+    // @OneToMany(()=>UserEntity, (user) => user.role)
+    // users: UserEntity[];
 
     @Column({
         type: 'varchar',
