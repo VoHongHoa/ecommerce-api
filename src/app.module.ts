@@ -12,6 +12,7 @@ import { WhiteListDetailsModule } from './modules/white-list-details/white-list-
 import { InvoiceHeadersModule } from './modules/invoice-headers/invoice-headers.module';
 import { InvoiceDetailsModule } from './modules/invoice-details/invoice-details.module';
 import { AuthModule } from './modules/auth/auth.module.';
+import { RolesModule } from './modules/roles/roles.module';
 
 
 @Module({
@@ -40,6 +41,7 @@ import { AuthModule } from './modules/auth/auth.module.';
     WhiteListDetailsModule,
     InvoiceHeadersModule,
     InvoiceDetailsModule,
+    RolesModule,
     AuthModule
   ],
 })

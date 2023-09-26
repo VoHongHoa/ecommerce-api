@@ -11,6 +11,7 @@ import { WhiteListHeaderEntity } from "src/modules/white-list-headers/white-list
 import { WhiteListDetailEntity } from "src/modules/white-list-details/white-list-details.entity";
 import { InvoiceHeaderEntity } from "src/modules/invoice-headers/invoice-headers.entity";
 import { InvoiceDetailEntity } from "src/modules/invoice-details/invoice-details.entity";
+import { RoleEntity } from "src/modules/roles/roles.entity";
 
 @Global()
 @Module({
@@ -25,7 +26,8 @@ import { InvoiceDetailEntity } from "src/modules/invoice-details/invoice-details
             WhiteListHeaderEntity,
             WhiteListDetailEntity,
             InvoiceHeaderEntity,
-            InvoiceDetailEntity
+            InvoiceDetailEntity,
+            RoleEntity
         ])
     ],
     providers: [
