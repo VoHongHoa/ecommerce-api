@@ -7,6 +7,7 @@ import { InvoiceDetailEntity } from "src/modules/invoice-details/invoice-details
 import { InvoiceHeaderEntity } from "src/modules/invoice-headers/invoice-headers.entity";
 import { ItemEntity } from "src/modules/items/items.entity";
 import { ProfileEntity } from "src/modules/profiles/profiles.entity";
+import { RoleACLProfileEntity } from "src/modules/role-acl-profiles/role-acl-profiles.entity";
 import { RoleEntity } from "src/modules/roles/roles.entity";
 import { UserEntity } from "src/modules/users/users.entity";
 import { WhiteListDetailEntity } from "src/modules/white-list-details/white-list-details.entity";
@@ -26,6 +27,7 @@ export class BeanManagementService {
         @InjectRepository(WhiteListDetailEntity) public readonly whiteListDetail: Repository<WhiteListDetailEntity>,
         @InjectRepository(InvoiceHeaderEntity) public readonly invoiceHeader: Repository<InvoiceHeaderEntity>,
         @InjectRepository(InvoiceDetailEntity) public readonly invoiceDetail: Repository<InvoiceDetailEntity>,
-        @InjectRepository(RoleEntity) public readonly role: Repository<RoleEntity>
+        @InjectRepository(RoleEntity) public readonly role: Repository<RoleEntity>,
+        @InjectRepository(RoleACLProfileEntity) public readonly roleACLProfile: Repository<RoleACLProfileEntity>
     ) {}
 }

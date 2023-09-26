@@ -12,6 +12,7 @@ import { WhiteListDetailEntity } from "src/modules/white-list-details/white-list
 import { InvoiceHeaderEntity } from "src/modules/invoice-headers/invoice-headers.entity";
 import { InvoiceDetailEntity } from "src/modules/invoice-details/invoice-details.entity";
 import { RoleEntity } from "src/modules/roles/roles.entity";
+import { RoleACLProfileEntity } from "src/modules/role-acl-profiles/role-acl-profiles.entity";
 
 @Global()
 @Module({
@@ -27,7 +28,8 @@ import { RoleEntity } from "src/modules/roles/roles.entity";
             WhiteListDetailEntity,
             InvoiceHeaderEntity,
             InvoiceDetailEntity,
-            RoleEntity
+            RoleEntity,
+            RoleACLProfileEntity
         ])
     ],
     providers: [

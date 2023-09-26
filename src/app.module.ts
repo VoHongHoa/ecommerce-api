@@ -13,6 +13,7 @@ import { InvoiceHeadersModule } from './modules/invoice-headers/invoice-headers.
 import { InvoiceDetailsModule } from './modules/invoice-details/invoice-details.module';
 import { AuthModule } from './modules/auth/auth.module.';
 import { RolesModule } from './modules/roles/roles.module';
+import { RoleACLProfilesModule } from './modules/role-acl-profiles/role-acl-profiles.module';
 
 
 @Module({
@@ -42,6 +43,7 @@ import { RolesModule } from './modules/roles/roles.module';
     InvoiceHeadersModule,
     InvoiceDetailsModule,
     RolesModule,
+    RoleACLProfilesModule,
     AuthModule
   ],
 })
