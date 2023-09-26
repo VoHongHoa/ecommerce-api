@@ -13,6 +13,7 @@ import { InvoiceHeaderEntity } from "src/modules/invoice-headers/invoice-headers
 import { InvoiceDetailEntity } from "src/modules/invoice-details/invoice-details.entity";
 import { RoleEntity } from "src/modules/roles/roles.entity";
 import { RoleACLProfileEntity } from "src/modules/role-acl-profiles/role-acl-profiles.entity";
+import { ACLEntity } from "src/modules/acl/acl.entity";
 
 @Global()
 @Module({
@@ -29,7 +30,8 @@ import { RoleACLProfileEntity } from "src/modules/role-acl-profiles/role-acl-pro
             InvoiceHeaderEntity,
             InvoiceDetailEntity,
             RoleEntity,
-            RoleACLProfileEntity
+            RoleACLProfileEntity,
+            ACLEntity
         ])
     ],
     providers: [

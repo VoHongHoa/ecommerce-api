@@ -1,5 +1,6 @@
 import { Injectable }  from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { ACLEntity } from "src/modules/acl/acl.entity";
 import { CartDetailEntity } from "src/modules/cart-details/cart-details.entity";
 import { CartHeaderEntity } from "src/modules/cart-headers/cart-headers.entity";
 import { CategoryEntity } from "src/modules/categories/categories.entity";
@@ -28,6 +29,7 @@ export class BeanManagementService {
         @InjectRepository(InvoiceHeaderEntity) public readonly invoiceHeader: Repository<InvoiceHeaderEntity>,
         @InjectRepository(InvoiceDetailEntity) public readonly invoiceDetail: Repository<InvoiceDetailEntity>,
         @InjectRepository(RoleEntity) public readonly role: Repository<RoleEntity>,
-        @InjectRepository(RoleACLProfileEntity) public readonly roleACLProfile: Repository<RoleACLProfileEntity>
+        @InjectRepository(RoleACLProfileEntity) public readonly roleACLProfile: Repository<RoleACLProfileEntity>,
+        @InjectRepository(ACLEntity) public readonly acl: Repository<ACLEntity>
     ) {}
 }

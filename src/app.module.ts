@@ -14,6 +14,7 @@ import { InvoiceDetailsModule } from './modules/invoice-details/invoice-details.
 import { AuthModule } from './modules/auth/auth.module.';
 import { RolesModule } from './modules/roles/roles.module';
 import { RoleACLProfilesModule } from './modules/role-acl-profiles/role-acl-profiles.module';
+import { ACLModule } from './modules/acl/acl.module';
 
 
 @Module({
@@ -44,6 +45,7 @@ import { RoleACLProfilesModule } from './modules/role-acl-profiles/role-acl-prof
     InvoiceDetailsModule,
     RolesModule,
     RoleACLProfilesModule,
+    ACLModule,
     AuthModule
   ],
 })
