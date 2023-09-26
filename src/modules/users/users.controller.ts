@@ -2,7 +2,8 @@ import { Controller, Get, Post, Put, Delete, Param, Body, UseGuards,  } from "@n
 import { UsersService } from "./users.service";
 import { AuthGuard } from "../auth/auth.guard";
 import { Role } from "src/enums/role.enum";
-import RoleGuard from "../authz/authorize.guard";
+import { Authorize } from "../authz/authorize.decorator";
+import { AutherizeGuard } from "../authz/authorize.guard";
 
 
 @Controller('users')
@@ -16,7 +17,8 @@ export class UsersController {
     }
 
     @Get()
-    @UseGuards(RoleGuard(Role.Admin))
+    @Authorize(Role.Admin)
+    @UseGuards(AutherizeGuard)
     @UseGuards(AuthGuard)
     async getAll() {
         return await this.userService.getAll();
