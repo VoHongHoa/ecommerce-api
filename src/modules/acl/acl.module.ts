@@ -1,9 +1,9 @@
 import { Module } from "@nestjs/common";
+import { ACLController } from "./acl.controller";
 import { ServiceModule } from "src/common/service.module";
-import { CartHeadersController } from "./cart-headers.controller";
 
 @Module({
     imports: [ServiceModule],
-    controllers: [CartHeadersController],
+    controllers: [ACLController]
 })
-export class CartHeadersModule {}
+export class ACLModule {}

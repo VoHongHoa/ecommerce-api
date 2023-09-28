@@ -1,9 +1,10 @@
 import { BaseEntity } from "src/common/base.entity";
-import { Entity, Column, OneToOne, JoinColumn, OneToMany } from "typeorm";
+import { Entity, Column, OneToOne, JoinColumn, OneToMany, ManyToOne } from "typeorm";
 import { ProfileEntity } from "../profiles/profiles.entity";
 import { CartHeaderEntity } from "../cart-headers/cart-headers.entity";
 import { WhiteListHeaderEntity } from "../white-list-headers/white-list-headers.entity";
 import { InvoiceHeaderEntity } from "../invoice-headers/invoice-headers.entity";
+import { RoleEntity } from "../roles/roles.entity";
 
 
 @Entity('user')
@@ -34,14 +35,20 @@ export class UserEntity extends BaseEntity{
 
     @Column({
         type: 'varchar',
-        length: 20,
-        nullable: false,
-        default: 'customer'
+        nullable: false
     })
-    role: string;
+    role_id: string;
+
+    @ManyToOne(()=>RoleEntity, (role) => role.users)
+    @JoinColumn({
+        name: 'role_id',
+        referencedColumnName: 'id'
+    })
+    role: RoleEntity;
 
     @Column({
-        type: 'varchar'
+        type: 'varchar',
+        nullable: true
     })
     profile_id: string;
 
@@ -53,7 +60,8 @@ export class UserEntity extends BaseEntity{
     profile: ProfileEntity;
 
     @Column({
-        type: 'varchar'
+        type: 'varchar',
+        nullable: true
     })
     cart_id: string;
 
@@ -65,7 +73,8 @@ export class UserEntity extends BaseEntity{
     cart: CartHeaderEntity;
 
     @Column({
-        type: 'varchar'
+        type: 'varchar',
+        nullable: true
     })
     white_list_id: string;
 

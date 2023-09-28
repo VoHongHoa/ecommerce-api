@@ -11,6 +11,11 @@ import { WhiteListHeadersModule } from './modules/white-list-headers/white-list-
 import { WhiteListDetailsModule } from './modules/white-list-details/white-list-details.module';
 import { InvoiceHeadersModule } from './modules/invoice-headers/invoice-headers.module';
 import { InvoiceDetailsModule } from './modules/invoice-details/invoice-details.module';
+import { AuthModule } from './modules/auth/auth.module.';
+import { RolesModule } from './modules/roles/roles.module';
+import { RoleACLProfilesModule } from './modules/role-acl-profiles/role-acl-profiles.module';
+import { ACLModule } from './modules/acl/acl.module';
+import { UiACLModule } from './modules/ui-acl/ui-acl.module';
 
 
 @Module({
@@ -38,7 +43,12 @@ import { InvoiceDetailsModule } from './modules/invoice-details/invoice-details.
     WhiteListHeadersModule,
     WhiteListDetailsModule,
     InvoiceHeadersModule,
-    InvoiceDetailsModule
+    InvoiceDetailsModule,
+    RolesModule,
+    RoleACLProfilesModule,
+    ACLModule,
+    UiACLModule,
+    AuthModule
   ],
 })
 export class AppModule {}

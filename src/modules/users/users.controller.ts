@@ -1,5 +1,9 @@
-import { Controller, Get, Post, Put, Delete, Param, Body,  } from "@nestjs/common";
+import { Controller, Get, Post, Put, Delete, Param, Body, UseGuards,  } from "@nestjs/common";
 import { UsersService } from "./users.service";
+import { AuthGuard } from "../auth/auth.guard";
+import { AclAction } from "src/enums/enums";
+import { Authorize } from "../authz/authorize.decorator";
+import { AutherizeGuard } from "../authz/authorize.guard";
 
 
 @Controller('users')
@@ -13,6 +17,9 @@ export class UsersController {
     }
 
     @Get()
+    @Authorize([AclAction.READ, 'user'])
+    @UseGuards(AutherizeGuard)
+    @UseGuards(AuthGuard)
     async getAll() {
         return await this.userService.getAll();
     }
