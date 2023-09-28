@@ -2,7 +2,7 @@ import { BaseEntity } from "src/common/base.entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
 import { UserEntity } from "../users/users.entity";
 import { RoleACLProfileEntity } from "../role-acl-profiles/role-acl-profiles.entity";
-import { Role } from "src/enums/role.enum";
+import { Role } from "src/enums/enums";
 
 @Entity('role')
 export class RoleEntity extends BaseEntity {
@@ -13,8 +13,8 @@ export class RoleEntity extends BaseEntity {
     })
     role: string;
 
-    // @OneToMany(()=>UserEntity, (user) => user.role)
-    // users: UserEntity[];
+    @OneToMany(()=>UserEntity, (user) => user.role)
+    users: UserEntity[];
 
     @Column({
         type: 'varchar',

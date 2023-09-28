@@ -1,22 +1,27 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { Role } from 'src/enums/role.enum';
-import { AUTHORIZE_KEY } from './authorize.decorator';
+import { AUTHORIZE_KEY, RequiredPermission } from './authorize.decorator';
+import { CaslAbilityFactory } from './casl-ability.factory';
  
 @Injectable()
 export class AutherizeGuard implements CanActivate {
-    constructor (private reflector: Reflector) {}
+    constructor (
+        private reflector: Reflector,
+        private caslAbilityFactory:CaslAbilityFactory
+    ) {}
 
-    canActivate(context: ExecutionContext) : boolean {
-        const requiredRoles = this.reflector.getAllAndOverride<Role[]>(AUTHORIZE_KEY, [
+    async canActivate(context: ExecutionContext) {
+        const requiredPermissions = this.reflector.getAllAndOverride<RequiredPermission[]>(AUTHORIZE_KEY, [
             context.getHandler(),
             context.getClass(),
         ]);
-        if (!requiredRoles) {
+        if (!requiredPermissions) {
             return true;
         }
         const request = context.switchToHttp().getRequest();
         const user = request.user;
-        return requiredRoles[0] == user.role;
+        const ability = await this.caslAbilityFactory.createForUser(user);
+
+        return requiredPermissions.every(permission => ability.can(...permission));
     }
 }

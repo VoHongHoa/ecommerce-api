@@ -29,6 +29,8 @@ import { RolesService } from "src/modules/roles/roles.service";
 import { RoleACLProfilesService } from "src/modules/role-acl-profiles/role-acl-profiles.service";
 import { ACLService } from "src/modules/acl/acl.service";
 import { UiACLService } from "src/modules/ui-acl/ui-acl.service";
+import { AuthorizeService } from "src/modules/authz/authorize.service";
+import { CaslAbilityFactory } from "src/modules/authz/casl-ability.factory";
 
 @Global()
 @Module({
@@ -65,7 +67,9 @@ import { UiACLService } from "src/modules/ui-acl/ui-acl.service";
         RolesService,
         RoleACLProfilesService,
         ACLService,
-        UiACLService
+        UiACLService,
+        AuthorizeService,
+        CaslAbilityFactory
     ],
     exports: [
         BeanManagementService,
@@ -82,7 +86,9 @@ import { UiACLService } from "src/modules/ui-acl/ui-acl.service";
         RolesService,
         RoleACLProfilesService,
         ACLService,
-        UiACLService
+        UiACLService,
+        AuthorizeService,
+        CaslAbilityFactory
     ]
 })
 export class ServiceModule {}

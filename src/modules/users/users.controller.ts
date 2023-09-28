@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Param, Body, UseGuards,  } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import { AuthGuard } from "../auth/auth.guard";
-import { Role } from "src/enums/role.enum";
+import { AclAction } from "src/enums/enums";
 import { Authorize } from "../authz/authorize.decorator";
 import { AutherizeGuard } from "../authz/authorize.guard";
 
@@ -17,7 +17,7 @@ export class UsersController {
     }
 
     @Get()
-    @Authorize(Role.Admin)
+    @Authorize([AclAction.READ, 'user'])
     @UseGuards(AutherizeGuard)
     @UseGuards(AuthGuard)
     async getAll() {
